@@ -22,17 +22,20 @@ A docstring typically consists of three parts:
 Here's an example of a simple function with a docstring:
 
 ```python
-def greet(name):
+def factorial(n):
     """
-    Greets the user by name.
+    Calculates the factorial of a non-negative integer.
 
     Parameters:
-        name (str): The name of the person to greet.
+        n (int): The non-negative integer.
 
     Returns:
-        str: A greeting message including the person's name.
+        int: The factorial of the input integer.
     """
-    return f"Hello, {name}!"
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 ```
 
 ### Writing Docstrings Step-by-Step
@@ -129,4 +132,50 @@ def find_max(num1, num2):
         int or float: The maximum of the two input numbers.
     """
     return max(num1, num2)
+```
+
+#### Function to Convert Fahrenheit to Celsius
+```python
+def fahrenheit_to_celsius(fahrenheit):
+    """
+    Converts a temperature from Fahrenheit to Celsius.
+
+    Parameters:
+        fahrenheit (float): The temperature in Fahrenheit.
+
+    Returns:
+        float: The temperature in Celsius.
+    """
+    return (fahrenheit - 32) * 5 / 9
+```
+
+## Function to Print a Greeting
+In this function, note the use of the `greeting_type` parameter with several options for the user to select. The parameter options are detailed in the docstring, along with default values. Test cases below show its usage.
+```python
+def greet(name, greeting_type='casual'):
+    """
+    Greets a person with a specified type of greeting.
+
+    Parameters:
+        name (str): The name of the person to greet.
+        greeting_type (str, optional): The type of greeting to use.
+            Valid options: 'casual', 'formal', 'friendly'.
+            Defaults to 'casual'.
+
+    Returns:
+        str: The greeting message.
+    """
+    if greeting_type == 'casual':
+        return "Hey, " + name + "!"
+    elif greeting_type == 'formal':
+        return "Hello, " + name + ". How are you today?"
+    elif greeting_type == 'friendly':
+        return "Hi, " + name + "! It's good to see you!"
+
+# Example usage:
+print(greet('Alice'))  # Output: Hey, Alice!
+
+print(greet('Bob', 'formal'))  # Output: Hello, Bob. How are you today?
+
+print(greet('Charlie', 'friendly'))  # Output: Hi, Charlie! It's good to see you!
 ```
