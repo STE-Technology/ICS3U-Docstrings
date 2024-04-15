@@ -149,7 +149,7 @@ def fahrenheit_to_celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
 ```
 
-## Function to Print a Greeting
+#### Function to Print a Greeting
 In this function, note the use of the `greeting_type` parameter with several options for the user to select. The parameter options are detailed in the docstring, along with default values. Test cases below show its usage.
 ```python
 def greet(name, greeting_type='casual'):
